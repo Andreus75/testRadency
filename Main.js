@@ -21,9 +21,11 @@ const chooseOptimalDistance = (t, k, ls) => {
                }
            }
            for (let l = j+1; l < ls.length; l++) {
-               let sum3 =ls[i] + ls[j] + ls[l];
-               if (x <= sum3 && sum3 <= t){
-                   x = sum3;
+               if (k === 3) {
+                   let sum3 =ls[i] + ls[j] + ls[l];
+                   if (x <= sum3 && sum3 <= t){
+                       x = sum3;
+                   }
                }
            }
        }
@@ -34,6 +36,8 @@ const chooseOptimalDistance = (t, k, ls) => {
 
 chooseOptimalDistance(174, 3, [51, 56, 58, 59, 61]); //173
 chooseOptimalDistance(163, 3, [50]);
+chooseOptimalDistance(331, 2, [ 91, 74, 73, 85, 73, 81, 87 ]);
+
 
 // [51,56,58], [51,56,59], [51,56,61], [51,58,59], [51, 58,61], [51,59,61], [56,58,59], [56,58,61], [56,59,61], [58,59,61]
 //     165,         166,       168,       168,          170,         171,       173,         175,       176,        178
